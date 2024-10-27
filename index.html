@@ -4,11 +4,88 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TypingChamp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="CSS/normalize.css" />
     <link rel="stylesheet" href="CSS/styles.css" />
   </head>
   <body>
-    
+    <div class="container">
+      <div class="keyboard">
+        <div class="row one">
+          <button class="green" aria-label="Backtick">`</button>
+          <button class="green">1</button>
+          <button class="purple">2</button>
+          <button class="blue">3</button>
+          <button class="yellow">4</button>
+          <button class="yellow">5</button>
+          <button class="yellow">6</button>
+          <button class="yellow">7</button>
+          <button class="blue">8</button>
+          <button class="purple">9</button>
+          <button class="green">0</button>
+          <button class="green">-</button>
+          <button class="green">+</button>
+          <button class="green" data-key-type="special">Backspace</button>
+        </div>
+        <div class="row two">
+          <button class="green" data-key-type="special">Tab</button>
+          <button class="green">Q</button>
+          <button class="purple">W</button>
+          <button class="blue">E</button>
+          <button class="yellow">R</button>
+          <button class="yellow">T</button>
+          <button class="yellow">Y</button>
+          <button class="yellow">U</button>
+          <button class="blue">I</button>
+          <button class="purple">O</button>
+          <button class="green">P</button>
+          <button class="green">[</button>
+          <button class="green">]</button>
+          <button class="green" data-key-type="special">\</button>
+        </div>
+        <div class="row three">
+          <button class="green" data-key-type="special">Cap&nbsp;Lock</button>
+          <button class="green">A</button>
+          <button class="purple">S</button>
+          <button class="blue">D</button>
+          <button class="yellow" style="color: black">F</button>
+          <button class="yellow">G</button>
+          <button class="yellow">H</button>
+          <button class="yellow" style="color: black">J</button>
+          <button class="blue">K</button>
+          <button class="purple">L</button>
+          <button class="green">;</button>
+          <button class="green">'</button>
+          <button class="green" data-key-type="special">Enter</button>
+        </div>
+        <div class="row four">
+          <button class="green" data-key-type="special">Shift</button>
+          <button class="green">Z</button>
+          <button class="purple">X</button>
+          <button class="blue">C</button>
+          <button class="yellow">V</button>
+          <button class="yellow">B</button>
+          <button class="yellow">N</button>
+          <button class="yellow">M</button>
+          <button class="blue">,</button>
+          <button class="purple">.</button>
+          <button class="green">/</button>
+          <button class="green" data-key-type="special">Shift</button>
+        </div>
+        <div class="row five">
+          <button class="green" data-key-type="special">Ctrl</button>
+          <button data-key-type="special" class="green">ALT</button>
+          <button data-key-type="space" class="red">Space</button>
+          <button data-key-type="special" class="green">ALT</button>
+          <button class="green" data-key-type="special">Ctrl</button>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
