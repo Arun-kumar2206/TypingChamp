@@ -10,7 +10,7 @@ body{
 .container{
     display: flex;
     justify-content: center;
-    padding: 5rem;
+    margin-top: 5rem;
 }
 
 .keyboard{
@@ -138,5 +138,22 @@ button[data-key-type="space"]{
 
     button[data-key-type="space"]{
         width: 33.2rem;
+    }
+}
+
+
+#typing-content{
+    color: #fff;
+    text-align: center;
+    padding: 5rem;
+    margin: 5rem 8rem;
+    font-size: 2.5rem;
+}
+
+@media screen and (max-width: 970px) {
+    #typing-content{
+        font-size: 1.8rem;
+        margin: 3rem 4rem;
+        padding: 4rem;
     }
 }
