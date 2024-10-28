@@ -25,7 +25,7 @@ body{
 
 .row button{
     display: inline-flex;
-    border: 1px solid #ccc;
+    border: 0;
     margin: 1px;
     padding: 2.5rem;
     width: 3rem;
@@ -34,11 +34,11 @@ body{
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.2s;
-    color: #fff;
+    color: #ccc;
 }
 
 .row .green{
-    background-color: rgba(0, 240, 28, 0.6);
+    background-color: rgba(28, 165, 44, 0.464);
 }
 
 .row .green:active{
@@ -46,7 +46,7 @@ body{
 }
 
 .row .purple{
-    background-color: rgba(124, 50, 193, 0.463);
+    background-color: rgba(45, 18, 70, 0.463);
 }
 
 .row .purple:active{
@@ -54,7 +54,7 @@ body{
 }
 
 .row .blue{
-    background-color: powderblue;
+    background-color: rgba(97, 149, 156, 0.453);
 }
 
 .row .blue:active{
@@ -62,7 +62,7 @@ body{
 }
 
 .row .red{
-    background-color: tomato;
+    background-color: rgba(180, 70, 51, 0.505);
 }
 
 .row .red:active{
@@ -70,7 +70,7 @@ body{
 }
 
 .row .yellow{
-    background-color: rgb(192, 192, 62);
+    background-color: rgba(151, 151, 49, 0.579);
 }
 
 .row .yellow:active{
@@ -156,4 +156,24 @@ button[data-key-type="space"]{
         margin: 3rem 4rem;
         padding: 4rem;
     }
+}
+
+.row .green.active{
+    background-color: rgb(7, 255, 36);
+}
+
+.row .purple.active{
+    background-color: rgb(132, 0, 255);
+}
+
+.row .blue.active{
+    background-color: rgb(0, 225, 255);
+}
+
+.row .red.active{
+    background-color: rgb(255, 38, 0);
+}
+
+.row .yellow.active{
+    background-color: yellow;
 }
