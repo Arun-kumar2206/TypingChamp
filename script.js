@@ -1,9 +1,21 @@
+let sentences = "";
+let currentIndex = 0;
+
+function processText(text){
+  return text
+    .replace(/[^\w\s.]/g, "") 
+    .replace(/\s+/g, " ")    
+    .toLowerCase();
+}
+
 fetch("https://baconipsum.com/api/?type=meat-and-filler&paras=1")
         .then((response) => response.json())
         .then((data) => {
-          const text = data[0]; 
-          const sentences = text.split(". ").slice(0, 2).join(" ") + ""; 
-          document.getElementById("typing-content").innerText = sentences;
+          const words = processText(data[0]).split(" ");
+          const limitedWords = words.slice(0, 15).join(" ").trim();
+          sentences = limitedWords.replace(/\.$/, "") + ".";
+          const html = sentences.split("").map((char) => `<span>${char}</span>`).join("");          
+          document.getElementById("typing-content").innerHTML = html;
         })
         .catch((error) => console.error("Error fetching the text:", error));
 
@@ -44,6 +56,32 @@ document.addEventListener('DOMContentLoaded', function(){
 
     if(button){
       button.classList.remove('active');
+    }
+  });
+
+  document.addEventListener('keydown', function(event){
+    if(!sentences){
+      return;
+    }
+
+    let key = event.key.toLowerCase();
+
+    if(key === " "){
+      key = " ";
+    }
+
+    const currentChar = sentences[currentIndex];
+
+    const spans = document.querySelectorAll("#typing-content span");
+    if(key === currentChar){
+      spans[currentIndex].style.color = "#ccc";
+      currentIndex++;
+    }else{
+        spans[currentIndex].style.color = "red";
+    }
+
+    if(currentIndex >= sentences.length){
+      currentIndex = sentences.length - 1;
     }
   });
 });
