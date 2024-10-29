@@ -10,7 +10,7 @@ body{
 .container{
     display: flex;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 5rem;    
 }
 
 .keyboard{
@@ -86,6 +86,10 @@ button[data-key-type="special"]{
     width: 11rem;
 }
 
+.two button[data-key-type="special"]{
+    width:8.05rem;
+}
+
 .three button[data-key-type="special"]{
     width: 10.7rem;
 }
@@ -95,7 +99,7 @@ button[data-key-type="special"]{
 }
 
 button[data-key-type="space"]{
-    width: 42.6rem;
+    width: 41.6rem;
 }
 
 .row{
@@ -153,7 +157,7 @@ button[data-key-type="space"]{
 @media screen and (max-width: 970px) {
     #typing-content{
         font-size: 1.8rem;
-        margin: 3rem 4rem;
+        margin: 5rem 4rem;
         padding: 4rem;
     }
 }
@@ -176,4 +180,28 @@ button[data-key-type="space"]{
 
 .row .yellow.active{
     background-color: yellow;
+}
+
+.timer{
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+}
+
+.timer h2{
+    color: #fff;
+    display: flex;
+    border-radius: 2rem;
+    justify-content: center;
+    margin: 1rem auto;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(135deg, #6a5acd, #48c6ef);
+    text-align: center;
+    align-items: center;
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+}
+
+.timer h2 span{
+    font-family: 'Courier New', Courier, monospace;
 }

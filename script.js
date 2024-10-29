@@ -1,5 +1,9 @@
 let sentences = "";
 let currentIndex = 0;
+let seconds = 0;
+let minutes = 0;
+let timeStarted = false;
+let intervalid;
 
 function processText(text){
   return text
@@ -96,4 +100,30 @@ document.addEventListener('DOMContentLoaded', function(){
       currentIndex = sentences.length - 1;
     }
   });
+
+  document.addEventListener('keydown', function(event){
+    let key = event.key.toLowerCase();
+    if(key === sentences[0]){
+      if(!timeStarted){
+        timeStarted = true;
+      intervalid = setInterval(() => {
+        seconds++;
+        if(seconds === 60){
+          seconds = 0;
+          minutes++;
+        }
+    
+        if(minutes === 5){
+          seconds = 0;
+          minutes = 0;
+        }
+    
+        document.querySelector('.seconds').innerHTML = seconds < 10 ? '0' + seconds : seconds;
+        document.querySelector('.minutes').innerHTML = minutes < 10 ? '0' + minutes : minutes;
+      }, 100);
+    }
+  }
+  });
+
+  
 });
