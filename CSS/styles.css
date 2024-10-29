@@ -5,7 +5,9 @@ html{
 body{
     font-family: "Roboto Mono", monospace;
     font-size: 1.5rem;
-    background-color: #000;
+    background-image: url(../IMAGES/img1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .responsive-overlay{
@@ -40,6 +42,10 @@ body{
     cursor: pointer;
     transition: background-color 0.2s;
     color: #ccc;
+}
+
+.key-underline{
+    text-decoration: underline;
 }
 
 .row .green{
