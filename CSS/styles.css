@@ -7,6 +7,11 @@ body{
     font-size: 1.5rem;
     background-color: #000;
 }
+
+.responsive-overlay{
+    display: none;
+}
+
 .container{
     display: flex;
     justify-content: center;
@@ -228,4 +233,119 @@ button[data-key-type="space"]{
 
 .wpm h2 span{
     font-family: 'Courier New', Courier, monospace;
+}
+
+@media screen and (max-width: 970px) {
+    .wpm h2{
+        font-size: 1rem;
+        padding: 1rem 2rem;
+    }
+
+    .timer h2{
+        font-size: 1rem;
+        padding: 1rem 2rem;
+    }
+}
+
+@media screen and (max-width:600px){
+    body{
+        background-color: #030303;
+    }
+
+    #typing-content,
+    .container,
+    .wpm,
+    .timer{
+        filter: blur(8px);
+        pointer-events: none;
+    }
+
+    .responsive-overlay{
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+    }
+
+    .overlay-content{
+        position: relative;
+        width: 90%;
+        max-width: 400px;
+        margin: auto;
+        padding: 2rem;
+        background-color: #1a1a1a;
+        border-radius: 16px;
+        text-align: center;
+        color: #fff;
+    }
+
+    .overlay-icon{
+        margin-bottom: 1.5rem;
+        color: #4a9eff;
+    }
+
+    .overlay-icon svg{
+        width: 64px;
+        height: 64px;
+    }
+
+    .overlay-content h2{
+        margin: 0 0 1rem 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .overlay-content p{
+        margin: 0 0 1.5rem 0;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #a0a0a0;
+    }
+
+    .device-requirement {
+        margin: 2rem 0;
+        padding: 1rem;
+        background-color: #252525;
+        border-radius: 8px;
+    }
+
+    .min-width {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        padding: 0.25rem 0.75rem;
+        background-color: #4a9eff;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .screen-indicator {
+        height: 6px;
+        background-color: #333;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .current-width {
+        height: 100%;
+        background: linear-gradient(90deg, #4a9eff, #60d6ff);
+        border-radius: 3px;
+    }
+
+    .suggestion {
+        font-size: 0.875rem;
+        color: #666;
+    } 
+}
+
+    
+@media screen and (max-width: 600px) {
+    body.overlay-active {
+        overflow: hidden;
+    }
 }
