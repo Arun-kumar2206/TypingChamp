@@ -8,7 +8,8 @@ function processText(text){
     .toLowerCase();
 }
 
-fetch("https://baconipsum.com/api/?type=meat-and-filler&paras=1")
+function fetchText(){
+  fetch("https://baconipsum.com/api/?type=meat-and-filler&paras=1")
         .then((response) => response.json())
         .then((data) => {
           const words = processText(data[0]).split(" ");
@@ -16,11 +17,16 @@ fetch("https://baconipsum.com/api/?type=meat-and-filler&paras=1")
           sentences = limitedWords.replace(/\.$/, "") + ".";
           const html = sentences.split("").map((char) => `<span>${char}</span>`).join("");          
           document.getElementById("typing-content").innerHTML = html;
+          currentIndex = 0;
         })
         .catch((error) => console.error("Error fetching the text:", error));
 
+}
+
+
   
 document.addEventListener('DOMContentLoaded', function(){
+  fetchText();
   document.addEventListener('keydown', function(event){
     let key = event.key.toUpperCase();
 
@@ -60,6 +66,8 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
   document.addEventListener('keydown', function(event){
+    let textSize = sentences.length;
+
     if(!sentences){
       return;
     }
@@ -78,6 +86,10 @@ document.addEventListener('DOMContentLoaded', function(){
       currentIndex++;
     }else{
         spans[currentIndex].style.color = "red";
+    }
+
+    if(textSize === currentIndex){
+      fetchText();
     }
 
     if(currentIndex >= sentences.length){
