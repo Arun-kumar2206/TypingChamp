@@ -205,3 +205,27 @@ button[data-key-type="space"]{
 .timer h2 span{
     font-family: 'Courier New', Courier, monospace;
 }
+
+.wpm{
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+}
+
+.wpm h2{
+    color: #fff;
+    display: flex;
+    border-radius: 2rem;
+    justify-content: center;
+    margin: 1rem auto;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(135deg, #6a5acd, #48c6ef);
+    text-align: center;
+    align-items: center;
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+}
+
+.wpm h2 span{
+    font-family: 'Courier New', Courier, monospace;
+}
