@@ -7,6 +7,25 @@ let intervalid;
 let charactersTyped = 0;
 let errors = 0;
 
+function openPopup(){
+  const popup = document.getElementById('popup');
+  const wpm = document.querySelector('.wpm-counter').innerText;
+  const time = `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+  document.querySelector('.popup-wpm h3:last-child').innerText = wpm;
+  document.querySelector('.popup-time h3:nth-child(2)').innerText = time.split(':')[0] + ":"
+  document.querySelector('.popup-time h3:nth-child(3)').innerText = time.split(":")[1];
+  popup.classList.add('open-popup');
+}
+
+function closePopup(){
+  const popup = document.getElementById('popup');
+  popup.classList.remove('open-popup');
+}
+
+function popup(){
+  resetStats();
+}
+
 function processText(text){
   return text
     .replace(/[^\w\s.]/g, "") 
@@ -19,7 +38,7 @@ function fetchText(){
         .then((response) => response.json())
         .then((data) => {
           const words = processText(data[0]).split(" ");
-          const limitedWords = words.slice(0, 30).join(" ").trim();
+          const limitedWords = words.slice(0, 20).join(" ").trim();
           sentences = limitedWords.replace(/\.$/, "") + ".";
           const html = sentences.split("").map((char) => `<span>${char}</span>`).join("");          
           document.getElementById("typing-content").innerHTML = html;
@@ -142,6 +161,7 @@ document.addEventListener('DOMContentLoaded', function(){
       currentIndex++;
 
       if(currentIndex === sentences.length){
+        openPopup();
         fetchText();
       }
     }else{
