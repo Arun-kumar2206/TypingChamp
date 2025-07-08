@@ -26,18 +26,12 @@ function popup(){
   resetStats();
 }
 
-function processText(text){
-  return text
-    .replace(/[^\w\s.]/g, "") 
-    .replace(/\s+/g, " ")    
-    .toLowerCase();
-}
 
 function fetchText(){
-  fetch("https://baconipsum.com/api/?type=meat-and-filler&paras=1")
+  fetch("https://random-word-api.herokuapp.com/word?number=15&length=5")
         .then((response) => response.json())
         .then((data) => {
-          const words = processText(data[0]).split(" ");
+          const words = data;
           const limitedWords = words.slice(0, 20).join(" ").trim();
           sentences = limitedWords.replace(/\.$/, "") + ".";
           const html = sentences.split("").map((char) => `<span>${char}</span>`).join("");          
