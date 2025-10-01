@@ -11,8 +11,7 @@ TypingChamp is a web-based typing speed test application built with **HTML**, **
 
 ## Demo
 
-You can check out the live demo of the project [here](https://arun-kumar2206.github.io/TypingChamp/). 
-
+You can check out the live demo of the project [here](https://arun-kumar2206.github.io/TypingChamp/).
 
 ## Installation
 
@@ -49,8 +48,6 @@ To run TypingChamp locally, follow these steps:
 ## Contributing
 
 Contributions are welcome! If you have suggestions for new features or improvements, feel free to submit an issue or a pull request.
-
-
 
 ---
 

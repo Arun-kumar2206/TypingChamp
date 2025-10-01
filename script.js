@@ -28,7 +28,7 @@ function popup(){
 
 
 function fetchText(){
-  fetch("https://random-word-api.herokuapp.com/word?number=15&length=5")
+  fetch("https://random-word-api.vercel.app/api?words=15")
         .then((response) => response.json())
         .then((data) => {
           const words = data;
